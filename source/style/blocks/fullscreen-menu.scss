@@ -1,0 +1,39 @@
+.fullscreen-menu{
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,191,165,.9);
+  padding-top: 80px;
+  z-index: 30;
+  position: fixed;
+  display: none;
+}
+
+.fullscreen-menu__list{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fullscreen-menu__link{
+  display: block;
+
+  .title__small_fullscreen_menu{
+    &:after, &:before{
+      opacity: 0;
+      transition: $transition;
+    }
+  }
+
+  &:hover, &.active{
+
+    .title__small_fullscreen_menu{
+      color: #fff;
+
+      &:after, &:before{
+        background: #fff;
+        opacity: 1;
+      }
+    }
+  }
+}

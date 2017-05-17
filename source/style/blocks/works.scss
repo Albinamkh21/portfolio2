@@ -1,0 +1,41 @@
+.works{
+  position: relative;
+  height: 186px;
+  min-height: 186px;
+}
+.works__title-wrapper {
+
+}
+.works__section-title{
+
+
+
+}
+.works-content__triangle {
+  position: absolute;
+  height: 100px;
+  width: 100%;
+  bottom: 100%;
+}
+.works-content__triangle_left,.works-content__triangle_right {
+
+  width:50% ;
+  height: 100px;
+  float: left;
+
+}
+.works__left, .works__right{
+  @extend %clearfix;
+  width: 50%;
+  float: left;
+
+}
+.works__left {
+   background-color: $grey;
+
+ }
+.works__right {
+  background-color: $beige;
+
+}
+

@@ -1,0 +1,22 @@
+//block variables
+- var menu_type = 'auth__menu menu_green'
+- var menu_items = [ {title: 'На главную', href: 'index.html' },{title:'Войти', href: 'auth.html' }]
+
+.auth
+    .subtitle.auth__title Авторизуйтесь
+    .auth__input
+        .login_pic
+        input.login_input(placeholder="Логин")
+    .auth__input
+        .password_pic
+        input.password__input(placeholder="Пароль")
+    .auth__capcha
+        input(type="checkbox" id="isPerson").checkbox-input
+        span Я человек
+        .text_bold Вы точно не робот?
+        input(type="radio" name="robot")
+        |Да
+        input(type="radio" name="robot")
+        |Не уверен
+        include ../common/menu
+

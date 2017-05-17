@@ -1,0 +1,16 @@
+.auth-btn {
+  color: $white;
+  height: 45px;
+  width: 180px;
+  text-align: center;
+  border: 1px solid $white;
+  border-radius: 6px;
+}
+
+.auth-btn__link {
+  color: $white;
+  text-decoration: none;
+  text-align: center;
+  margin: auto;
+  line-height: 45px;
+}

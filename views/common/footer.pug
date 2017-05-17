@@ -1,0 +1,21 @@
+block variables
+- var menu_type = 'footer__menu'
+//- var menu_items = ['Мои работы', 'Обо мне', 'Блог','Авторизация']
+- var menu_items = [ {title: 'Мои работы', href: '/works' },{title:'Обо мне', href: '/about' },{title:'Блог', href: '/blog' },{title:'Авторизация', href: '/'}];
+- var socials_type = 'footer__socials'
+footer.footer
+    section.section.footer-main
+        .footer-main-column
+            .footer__text
+                | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool.
+        .footer-main-column
+            include menu
+            include ../blocks/socials
+        .footer-main-column
+            .footer__text
+                p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.
+            .footer__text.footer__text_bold — Martin Golding
+
+
+    section.section.footer-bottom
+

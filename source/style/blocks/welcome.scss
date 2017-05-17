@@ -1,0 +1,73 @@
+.welcome__user-wrapper
+{
+  @include centered();
+}
+
+.welcome__socials{
+  @include centered(x);
+  margin-top: 15px;
+
+}
+.welcome__menu {
+  min-height: 45px;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  @include centered(x);
+  background-color: #08b09e;
+
+
+
+}
+
+.welcome__auth-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 20px 20px 0 0;
+}
+
+
+.flip-container {
+  perspective: 1000px;
+}
+/* flip the pane when hovered */
+.hover {
+  transform: rotateY(180deg);
+}
+
+.flip-container, .welcome__auth-wrapper, .welcome__user-wrapper {
+  @include centered();
+  width: 380px;
+  height: 400px;
+}
+
+/* flip speed goes here */
+.flipper {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+  position: relative;
+}
+
+/* hide back of pane during swap */
+.welcome__auth-wrapper, .welcome__user-wrapper {
+  backface-visibility: hidden;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+.welcome__user-wrapper {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+}
+
+
+.welcome__auth-wrapper {
+  transform: rotateY(180deg);
+
+}

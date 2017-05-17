@@ -1,0 +1,64 @@
+extends ../main.layout.pug
+block content
+  section.section.hero
+    include ../common/hero.pug
+
+  section.section.about-title
+    .works-content__triangle
+      .works-content__triangle_left
+        svg(
+        viewbox="0 0 1000 100"
+        preserveAspectRatio="none"
+        class="triangle triangle_fill_white blog_triangle_position")
+          polygon(points="0,0 0,100 1000,100")
+      .works-content__triangle_right
+        svg(
+        viewbox="0 0 1000 100"
+        preserveAspectRatio="none"
+        class="triangle triangle_fill_beige blog_triangle_position")
+          polygon(points="0,100 1000,100 1000,0")
+  section.section.about-content
+    .about__left
+      +title('Обо мне', 'about-header.png', 'about__section-title')
+      .user-about
+        .user-about__picture
+          img(src="assets/img/content/photo.png").user-about__picture-img
+        .user-about__title
+          .subtitle
+            | Кто я
+        .user-about__text
+          p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+          p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+    .about__right
+      .about-data
+        .about-data__description
+          .about-data__title
+            .subtitle Чем я могу быть полезен
+          .about-data__text
+            p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+            .about-data__content
+          ul.skills
+            each skill in skills
+              each skillsArray, skillName in skill
+                li.skills__item
+
+                  .skill-section
+                    .skill-section__title= skillName
+                    ul.skill-section__list
+                      each skillTitle in skillsArray
+                        li.skills-section__item.skill
+                          svg(
+                          viewbox="0 0 110 110"
+                          class = "circles"                     )
+                            circle(r="45" cx="50%" cy="50%" fill="none" class ="circle__first" )
+                            circle(r="45" cx="50%" cy="50%" transform="rotate(-90 55 55)" class="circle__second circle-15")
+                          .skill__name= skillTitle
+
+
+  section.section.map.about__map
+
+
+
+
+
+

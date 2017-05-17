@@ -1,0 +1,20 @@
+- var socials_type = "hero__socials"
+.hero__bg
+    img(src="assets/img/bg/portfolio.jpg", alt="").hero__bg-img
+    include ../blocks/socials
+.hero__hamburger
+    .hamburger-menu
+        a(href="#").hamburger-menu__link
+            span.hamburger-menu__link-center
+
+a(href="").down-arrow
+    img(src="assets/img/icons/arrow_down.svg").down-arrow__icon
+.hero__title
+      .user.hero__user-block
+        .user__photo
+            .user__photo-avatar
+                img(src="assets/img/content/user.jpg", alt="").user__photo-img
+      .blog__title
+        +title('БЛОГ', 'blog-header.png', 'title_color_white')
+        .hero__text
+            | Статьи, которые я написал

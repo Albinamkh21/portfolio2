@@ -1,0 +1,24 @@
+//block variables
+- var menu_type = 'welcome__menu menu_green'
+- var socials_type = 'welcome__socials socials_green'
+//- var menu_items = ['Мои работы', 'Обо мне', 'Блог']
+- var menu_items = [ {title: 'Мои работы', href: '/works' },{title:'Обо мне', href: '/about' },{title:'Блог', href: '/blog' }]
+.hero__bg(id="")
+    img(src="assets/img/bg/portfolio.jpg", alt="", id="welcomeHeroImg").hero__bg-img
+    .welcome__auth-btn.auth-btn
+        a(href="" id="authBtn").auth-btn__link Авторизоваться
+    .flip-container(id="flipContainer")
+        .flipper(id="flipper")
+            .welcome__user-wrapper
+                .user-wrapper
+                    .user
+                        .user__photo
+                            .user__photo-avatar
+                                img(src="assets/img/content/user.jpg", alt="").user__photo-img
+                        .user__name.user_color_main Владимир Астахов
+                        .user__text.user_color_main  Личный сайт веб разработчика
+                    include ../blocks/socials
+                    include ../common/menu
+
+            .welcome__auth-wrapper
+                include ../blocks/auth

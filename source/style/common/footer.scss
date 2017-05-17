@@ -1,0 +1,174 @@
+.footer
+{
+  max-width: 1200px;
+  //width: 100%;
+  margin: 0 auto;
+  background: #53595c;
+  font-size: 16px;
+  height: 185px;
+
+  @include laptop {
+    width:1200px;
+    font-size: 15px;
+    height: 185px;
+
+  }
+  @include tablets{
+    width:100%;
+    font-size: 15px;
+    height:273px;
+
+  }
+  @include  tabletssmall{
+    width:100%;
+    font-size: 15px;
+    height:273px;
+
+  }
+  @include phone{
+    width:95%;
+    font-size: 14px;
+    height: auto;
+  }
+
+  font-family: "Roboto Light";
+
+  color: $white;
+
+}
+.footer-main {
+  //height: 100%;
+  padding-top: 30px;
+  display: flex;
+  @include  tablets{
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+  @include  tabletssmall{
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+
+  @include phone {
+   flex-direction: column;
+    align-items: center;
+
+  }
+
+}
+.footer-main-column {
+  flex:1;
+  padding-left: 20px;
+  min-width: 380px;
+
+  @include tablets {
+    min-height: 73px;
+    text-align: left;
+    margin-bottom: 15px;
+    min-width: 330px;
+    width: 330px;
+    flex-grow: 1;
+    max-width: 100%;
+
+    &:first-child {
+      width: 330px;
+      margin-right: 0;
+      border-right: 1px solid #c2d6d6;
+    }
+
+    &:nth-child(2) {
+      width: 330px;
+      border-right: 0;
+    }
+
+    &:last-child {
+      width: 100%;
+      padding-left: 20px;
+
+      & .column__text {
+        //width: 720px;
+        text-align: left;
+      }
+    }
+  }
+    @include tabletssmall {
+      min-width: 240px;
+      min-height: 73px;
+      text-align: left;
+      margin-bottom: 15px;
+      width: 50%;
+      flex-grow: 1;
+      max-width: 100%;
+
+      &:first-child {
+
+        margin-right: 0;
+        border-right: 1px solid #c2d6d6;
+      }
+
+      &:nth-child(2) {
+
+        border-right: 0;
+      }
+
+      &:last-child {
+        width: 100%;
+        padding-left: 20px;
+
+        & .column__text {
+          width: 580px;
+        }
+      }
+    }
+
+
+  @include phone {
+    width: 30%;
+    text-align: center ;
+    padding: 20px 20px 10px 20px;
+    border-bottom: 1px solid  $color_grey;
+    &:first-child {
+
+      margin-right: 0;
+      border-right:none;
+
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+
+.footer__menu{
+  margin-bottom: 12px;
+  @include phone{
+    margin-bottom: 0px;
+  }
+
+}
+.footer-main-column:nth-child(2)  {
+  display: flex;
+  flex-direction: column;
+
+  @include phone {
+
+    align-content:center ;
+  }
+
+}
+.footer__text_bold {
+
+  font-family: "Roboto Roboto BoldItalic";
+
+
+}
+.footer__socials {
+
+  @include phone {
+    align-self: center;
+  }
+
+}
+

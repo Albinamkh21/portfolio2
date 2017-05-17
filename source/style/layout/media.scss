@@ -1,0 +1,25 @@
+@media screen and (max-width: 1200px) { //desctop
+  .wrapper {
+    width:970px;
+  }
+
+}
+
+@media screen and (max-width: 992px) { //laptop
+  .wrapper {
+    width:750px;
+  }
+
+}
+@media screen and (max-width: 768px) { //tablets
+  .wrapper {
+    width:720px;
+  }
+}
+
+@media screen and (max-width: 480px) { //phone
+  .wrapper {
+    width:95%;
+  }
+
+}

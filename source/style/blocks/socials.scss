@@ -1,0 +1,42 @@
+$color_grey: #c2d6d6;
+$color_while: #fff;
+//9eaaab
+.socials {
+  width: 160px;
+  z-index: 1000;
+
+}
+
+.socials__item {
+
+  display: inline-block;
+  list-style: none;
+  margin-left: 25px;
+
+}
+.socials__item:first-child{
+  margin-left: 0px;
+}
+.socials__icon {
+  line-height: 25px;
+  display: block;
+  width: 30px;
+  height: 25px;
+  vertical-align: middle;
+  fill: $color_grey;
+
+}
+
+.socials__icon:hover {
+  fill: $color_while;
+}
+
+.socials_green {
+  .socials__icon{
+    fill: #73d4c8;
+  }
+  .socials__icon:hover {
+    fill: #00bfa5;
+  }
+
+}

@@ -1,0 +1,62 @@
+.auth {
+  position: relative;
+  width: 380px;
+  height: 395px;
+  background-color: #e9eff2;
+  opacity: 0.85;
+  padding-top: 40px;
+  border-radius: 3px;
+}
+.auth__title {
+  width: 100%;
+  margin-bottom: 40px;
+}
+.login_input, .password__input {
+  width: 90%;
+  height: 45px;
+  border-radius: 6px;
+  margin: 0 20px;
+  margin-bottom: 20px;
+  outline: none;
+  border: none;
+  background-color: $white;
+}
+
+.text_bold {
+  font-family: "Roboto Bold";
+}
+
+.auth__menu {
+  min-height: 45px;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  @include centered(x);
+  background-color: #08b09e;
+}
+
+.auth__capcha   {
+  width: 100%;
+  text-align: center;
+}
+
+
+.checkbox-wrapper {
+
+
+}
+/*
+input[type="checkbox"] {
+  position: absolute;
+  left: -9999px;
+}
+input[type="checkbox"] + label {
+  //background: url(sprite.gif) 0 0 no-repeat;
+  background-color: $green;
+  color: $white;
+  padding-left: 20px;
+}
+input[type="checkbox"]:checked + label {
+  background-position: 0 -32px;
+}
+*/

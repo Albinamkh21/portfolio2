@@ -1,0 +1,140 @@
+.feedbacks {
+  width: 100%;
+  height:auto;
+  position: relative;
+}
+.feedbacks-data__wrapper {
+  width: 100%;
+  height:940px;
+  background-image: url("../img/bg/feedbacks_bg.jpg");
+  background-repeat: no-repeat;
+}
+.feedbacks-data {
+  width: 100%;
+  height: 200px;
+  display: flex;
+
+  @include phone {
+    flex-direction: column;
+    height: 400px;
+    align-items: center;
+
+  }
+
+}
+
+.feedbacks-data_position_left , .feedbacks-data_position_right {
+  //width: 50%;
+  //float: left;
+  flex: 1;
+
+
+}
+
+
+.feedbacks__title-wrapper {
+ // position: relative;
+
+
+}
+
+.feedbacks__section-title{
+  //@include centered(x);
+  position: absolute;
+
+}
+//можно сделать одним блоком
+.feedbacks__item {
+  text-align: left;
+ // width: 66.6%;
+  width: 400px;
+  height: 100%;
+  padding: 10px;
+  position: relative;
+
+  @include tabletssmall{
+    width: auto;
+    max-width: 400px;
+    margin-bottom: 60px;
+  }
+}
+.margin_right {
+  margin-left: 33.3%;
+
+  @include tablets{
+    margin-left: 22px;
+
+  }
+
+
+}
+
+.feedbacks__item-user {
+  display: flex;
+  margin-top: auto;
+  vertical-align: middle;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.feedbacks__item-photo {
+  flex: 1;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  //margin-bottom: 20px;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  align-self: center;
+
+  float: left;
+}
+.feedbacks__item-img {
+  width: 100%;
+
+}
+.feedbacks-data{
+
+  padding-top: 55px;
+  margin-bottom: 68px;
+}
+
+.feedbacks__item-quote
+{
+  position: absolute;
+  top: -55px;
+  color: rgba(#455a64, .2);
+  font-size: 36px;
+
+  @include tabletssmall{
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.feedbacks-data__text {
+  margin-bottom: 20px;
+
+
+}
+.feedbacks__item-signanure{
+  flex:4;
+  color : #20b5a1;
+  float: left;
+  margin-left: 20px;
+  vertical-align: middle;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
+}
+.signature-name {
+  font-family: "Roboto Bold";
+  width: 100%;
+}
+.signature-position {
+  width: 100%;
+}

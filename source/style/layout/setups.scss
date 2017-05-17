@@ -1,0 +1,103 @@
+html, body{
+	width: 100%;
+	min-height: 100%;
+	margin: 0;
+	padding:0;
+}
+
+html {
+  height: 100%;
+
+	font-size: 16px;
+	@include laptop {
+		font-size: 15px;
+
+	}
+	@include tablets{
+
+		font-size: 14px;
+
+	}
+	@include phone{
+		font-size: 14px;
+
+	}
+
+}
+
+
+body {
+	height: 100%;
+	margin: 0;
+	font-family: "Roboto Medium", Arial, sans-serif;
+	line-height: 1.42;
+	-webkit-font-smoothing: antialiased;
+}
+
+.page-content {
+	display: flex;
+	//min-height: 100vh;
+	flex-direction: column;
+	width: 100%;
+	text-align: center;
+	min-width: 100%;
+	min-height: 100%;
+	//max-width: 1200px;
+	//margin: 0 auto;
+}
+.wrapper {
+	flex: 1;
+	font-family: "Roboto regular";
+	color: $main-font-color;
+	max-width: 1200px;
+	width: 100%;
+
+	@include laptop {
+		width:1200px;
+
+	}
+	@include tablets {
+		width: 100%;
+
+	}
+	@include phone {
+		width:95%;
+
+	}
+	//margin: 0 auto;
+	min-height: 100%;
+	position: relative;
+	overflow: hidden;
+	margin: 0 auto;
+}
+/*
+.wrapper:after {
+	content:"";
+	height:185px;
+	display: block;
+
+
+}
+*/
+ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+p {
+	margin: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: normal;
+}
+
+* {
+	box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+}

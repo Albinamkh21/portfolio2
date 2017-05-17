@@ -1,0 +1,37 @@
+.blog-content {
+  position: relative;
+
+
+}
+.blog__title {
+  color: $color_real_whilte;
+}
+
+.blog-content__left {
+  width: 300px;
+  float: left;
+  height: 100%;
+}
+
+
+
+.blog-content__right {
+  width: 700px;
+  margin: 0 100px;
+  float: left;
+}
+.blog-content__triangle {
+  position: absolute;
+  height: 100px;
+  width: 100%;
+  bottom: 100%;
+}
+.blog-content__triangle_left,.blog-content__triangle_right {
+
+  width:50% ;
+  height: 100px;
+  float: left;
+
+}
+
+

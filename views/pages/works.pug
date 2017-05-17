@@ -1,0 +1,153 @@
+extends ../main.layout.pug
+block content
+    section.section.hero
+        include ../common/hero.pug
+    section.section.works
+        .works-content__triangle
+            .works-content__triangle_left
+                svg(
+                viewbox="0 0 1000 100"
+                preserveAspectRatio="none"
+                class="triangle triangle_fill_white blog_triangle_position")
+                    polygon(points="0,0 0,100 1000,100")
+            .works-content__triangle_right
+                svg(
+                viewbox="0 0 1000 100"
+                preserveAspectRatio="none"
+                class="triangle triangle_fill_white blog_triangle_position")
+                    polygon(points="0,100 1000,100 1000,0")
+        .works__title-wrapper
+            +title('Мои работы', 'works-header.png', 'works__section-title')
+    section.section.slider
+        .slider__description
+            .slider__description-info
+                ul(class = "slider-description__list")
+                    li(class = "slider-description__item active")
+                        .slider__description-title
+                            .subtitle Бейсбол онлайн
+                        .slider__description-skills
+                            | HTML, css, PHP
+                        .slider__description-btn-wrapper
+                            a(href="#").slider__description__btn
+                                i(aria-hidden="true").fa.fa-link
+                                .slider__description__btn-text Посмотреть сайт
+                    li(class = "slider-description__item ")
+                        .slider__description-title
+                            .subtitle Сайт школы онлайн <br> образования
+                        .slider__description-skills
+                            | HTML, css, javascript
+                        .slider__description-btn-wrapper
+                            a(href="#").slider__description__btn
+                                i(aria-hidden="true").fa.fa-link
+                                .slider__description__btn-text Посмотреть сайт
+                    li(class = "slider-description__item ")
+                        .slider__description-title
+                            .subtitle Лучшие бассейны
+                        .slider__description-skills
+                            | HTML, css, PHP
+                        .slider__description-btn-wrapper
+                            a(href="#").slider__description__btn
+                                i(aria-hidden="true").fa.fa-link
+                                .slider__description__btn-text Посмотреть сайт
+                    li(class = "slider-description__item ")
+                        .slider__description-title
+                            .subtitle Йога студия
+                        .slider__description-skills
+                            | HTML, css, javascript, PHP
+                        .slider__description-btn-wrapper
+                            a(href="#").slider__description__btn
+                                i(aria-hidden="true").fa.fa-link
+                                .slider__description__btn-text Посмотреть сайт
+        .slider__display
+
+                img( src = "assets/img/slider/1.jpeg").slider__display-pic
+                .slider__display-block
+                    ul(class="slider__list")
+                        li(class="slider__item active")
+                            img( src = "assets/img/slider/1.jpeg")
+                        li(class="slider__item")
+                            img( src = "assets/img/slider/2.jpeg")
+                        li(class="slider__item")
+                            img( src = "assets/img/slider/3.jpeg")
+                        li(class="slider__item ")
+                            img( src = "assets/img/slider/4.jpeg")
+
+
+        .slider__btns
+            .slider__btns__down
+                ul(class="slider__list")
+                    li(class="slider__item ")
+                        img( src = "assets/img/slider/1.jpeg").slider__btns__photo
+                    li(class="slider__item")
+                        img( src = "assets/img/slider/2.jpeg").slider__btns__photo
+                    li(class="slider__item")
+                        img( src = "assets/img/slider/3.jpeg").slider__btns__photo
+                    li(class="slider__item active")
+                        img( src = "assets/img/slider/4.jpeg").slider__btns__photo
+                a(href="" id="sliderDownArrow" ).slider__btns_link.slider__btns_link_color_lighten
+                    img(src="assets/img/icons/svg/portf_arrow_down.svg").slider__down-arrow-icon
+
+            .slider__btns__up
+                ul(class="slider__list")
+                    li(class="slider__item ")
+                        img( src = "assets/img/slider/1.jpeg").slider__btns__photo
+                    li(class="slider__item active")
+                        img( src = "assets/img/slider/2.jpeg").slider__btns__photo
+                    li(class="slider__item")
+                        img( src = "assets/img/slider/3.jpeg").slider__btns__photo
+                    li(class="slider__item")
+                        img( src = "assets/img/slider/4.jpeg").slider__btns__photo
+                a(href="" id="sliderUpArrow").slider__btns_link
+                    img(src="assets/img/icons/svg/portf_arrow_up.svg").slider__down-arrow-icon
+
+
+
+
+    section.section.feedbacks
+        +title('Что обо мне  говорят', 'about-header.png', 'feedbacks__section-title')
+        .feedbacks-data__wrapper
+            .feedbacks-data
+                //img(src="assets/img/bg/feedbacks_bg.jpg", alt="")
+                //это список, или все-таки два одинаовых дива с модификатором позиционирования
+                .feedbacks-data_position_left
+                    .feedbacks__item.margin_right
+                        i(class="fa fa-quote-left feedbacks__item-quote" aria-hidden="true")
+                        .feedbacks-data__text
+                            |Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                        .feedbacks__item-user
+                            .feedbacks__item-photo
+                                    img(src="assets/img/content/user.jpg", alt="").feedbacks__item-img
+                            .feedbacks__item-signanure
+                                .signature-name
+                                    | Ковальчук Дмитрий
+                                .signature-position
+                                    | основаель LoftSchool
+                .feedbacks-data_position_right
+                    .feedbacks__item
+                        i(class="fa fa-quote-left feedbacks__item-quote" aria-hidden="true")
+                        .feedbacks-data__text
+                            |Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+                        .feedbacks__item-user
+                            .feedbacks__item-photo
+                                img(src="assets/img/content/user.jpg", alt="").feedbacks__item-img
+                            .feedbacks__item-signanure
+                                .signature-name
+                                    | Сабанцев Владимир
+                                .signature-position
+                                    | преподаватель
+            .form-connect
+                .subtitle
+                    | Связаться со сной
+                .form-connect__inputs
+                    input(placeholder="Имя").form-connect__name
+                    input(placeholder="Email").form-connect__email
+                    textarea(placeholder="Ваше сообщение" ).form-connect__text
+                .form-connect__btn-wrapper
+                    .form-connect__btn-wrapper_left
+                        a().form-connect__btn.form-connect__btn-send Отправить
+                    .form-connect__btn-wrapper_right
+                        a().form-connect__btn.form-connect__btn-clear Очистить
+
+
+        a(href="").up-arrow
+

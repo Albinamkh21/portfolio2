@@ -1,0 +1,24 @@
+.articles {
+
+}
+.articles__item {
+  margin-bottom: 60px;
+}
+.articles__title {
+  text-decoration: none;
+  @include bernier();
+  color: $main-font-color;
+  font-size: 35px;
+
+
+}
+.articles__create_time {
+   font-family: "Roboto regular";
+   color: #00bfa5;
+
+ }
+.articles__text {
+  font-family: "Roboto regular";
+  color: $main-font-color;
+
+}

@@ -1,0 +1,32 @@
+$grey : #efeee9;
+$beige: #eeebdf;
+$main-font-color : #455a64;
+$white: #fff;
+$color_real_whilte: #fff;
+$green:#20b5a1;
+
+$footer: 110px;
+$footer_tablets: 230px;
+$transition: 0.5s;
+        //#373e42;455a64
+
+//mixins
+@import "helpers/mixins";
+//layout setups
+@import "layout/setups";
+@import "layout/fonts";
+
+
+
+
+@import "blocks/**/*";
+@import "common/**/*";
+
+//@import "layout/media";
+
+
+
+
+
+
+

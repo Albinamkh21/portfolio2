@@ -1,0 +1,23 @@
+$green_color:#00bfa5;
+
+.sidemenu {
+  text-align: right;
+}
+
+.sidemenu__item {
+  text-decoration: none;
+}
+
+.sidemenu__item:hover {
+   border-right: 1px solid $green_color;
+  .sidemenu__title {
+    font-family: "Roboto Bold";
+    color: $green_color;
+  }
+
+}
+.sidemenu__title {
+  text-decoration: none;
+  color: $main-font-color;
+}
+

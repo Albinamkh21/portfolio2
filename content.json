@@ -1,0 +1,20 @@
+{
+  "skills" : [
+    {
+      "Frontend" : ["HTML5", "CSS3", "JavaScript &jQuery"]
+    },
+    {
+      "Backend" : ["PHP", "mySQL", "Node.js &npm", "Mongo.db"]
+    },
+    {
+      "WorkFlow" : ["Git", "Gulp", "Bower"]
+
+    }
+  ],
+  "blogArticles" : [
+    "Самое важное в SASS",
+    "Приёмы в вёрстке, без которых обходится ни один сайт",
+    "Самый необходимый набор Gulp плагинов",
+    "Почему я выбрал Jade"
+  ]
+}
