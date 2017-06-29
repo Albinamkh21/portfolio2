@@ -1,0 +1,43 @@
+.form-container {
+  padding-top: 10px;
+}
+
+.form {
+  margin: 0 auto;
+  width: 350px;
+  border: 1px solid darkblue;
+  text-align: center;
+  padding: 20px;
+}
+
+.form__subtitle {
+  font: 25px 'Arial', sans-serif;
+  text-shadow: 1px 1px #ccc;
+  color: #353838;
+  margin-bottom: 10px;
+}
+
+.form__input-line, .form__textarea {
+  margin-bottom: 10px;
+}
+
+.form__input, .form__textarea {
+  border: 2px dashed darkslateblue;
+  padding: 10px 5px;
+  width: 100%;
+}
+.form__input-line, .form__btns {
+  display: block;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input:focus, textarea:focus {
+  outline: 2px solid darkslateblue;
+}
+
+.form__btn-send:focus, .form__btn-reset:focus {
+  outline: none;
+}

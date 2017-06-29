@@ -4,7 +4,7 @@ $main-font-color : #455a64;
 $white: #fff;
 $color_real_whilte: #fff;
 $green:#20b5a1;
-
+$green_light: #00bfa5;
 $footer: 110px;
 $footer_tablets: 230px;
 $transition: 0.5s;
@@ -15,12 +15,14 @@ $transition: 0.5s;
 //layout setups
 @import "layout/setups";
 @import "layout/fonts";
+@import "plugins/font-awesome";
 
 
 
 
 @import "blocks/**/*";
 @import "common/**/*";
+@import "admin/**/*";
 
 //@import "layout/media";
 

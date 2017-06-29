@@ -1,10 +1,4 @@
-(function() {
-  'use strict';
-
-  setTimeout(function() {
-    document.querySelector('.greating_picture').classList.add('m--show');
-  }, 1000);
-})();
+import prepareSend from './prepareSend';
 
 
 $(document).ready(function() {
@@ -12,6 +6,7 @@ $(document).ready(function() {
     if($('.preloader').length){
         preloader.init();
     }
+
     slider.init();
     if($('.fullscreen-menu').length){
         fullscreenMenu.init();
@@ -19,15 +14,30 @@ $(document).ready(function() {
     if($('#authBtn').length){
         flipper.init();
     }
+    if($('#login').length){
+        console.log('login');
+        $('#auth_login').on('click',prepareSendLogin);
+    }
 
 
 });
 
 
+function prepareSendLogin(e) {
+    e.preventDefault();
+    console.log('prepareSendLogin');
+    const formLogin = document.querySelector('#login');
+    let data = {
+        login: formLogin.login.value,
+        password: formLogin.password.value
+    };
 
-
-
-
+    prepareSend('/auth', formLogin, data, function(data) {
+        if (data === 'Авторизация успешна!') {
+            location.href = '/admin';
+        }
+    });
+}
 
 /*slider*/
 var slider = (function () {
@@ -44,10 +54,19 @@ var slider = (function () {
             descList = $('.slider-description__item', '.slider-description__list'),
             descActiveItem = descList.filter('.active'),
 
-            downBtnIndex = downActiveItem.index(),
-            upBtnIndex =  upActiveItem.index(),
-            displayIndex = displayActiveItem.index(),
-            directionCounter = direction == 'down' ? -1 : +1;
+     /*   upActiveItem = upList.eq(1).addClass('active'),
+        displayActiveItem = displayList.eq(1).addClass('active'),
+        descActiveItem = descList.eq(1).addClass('active'),
+        downActiveItem = downList.eq(1).addClass('active'),
+*/
+
+        downBtnIndex = downActiveItem.index(),
+        upBtnIndex =  upActiveItem.index(),
+        displayIndex = displayActiveItem.index(),
+        directionCounter = direction == 'down' ? -1 : +1;
+
+
+
 
 
         if(direction=='up') {
@@ -295,3 +314,5 @@ var flipper = (function () {
 
 
 }());
+
+

@@ -1,25 +1,76 @@
-.blog-content {
+.blog {
+  display: flex;
+  flex-direction: column;
   position: relative;
+  height: 100%;
+//  padding-bottom: 65px;
+
+
+}
+.blog-content {
+//  flex:1;
+  padding: 0 10px;
+  margin: 0 auto;
+  position: relative;
+  height: 100%;
+ &::before {
+   content: "";
+   display: table;
+ }
+
 
 
 }
 .blog__title {
   color: $color_real_whilte;
+
 }
 
 .blog-content__left {
-  width: 300px;
+  width: 25%;
   float: left;
   height: 100%;
+
+  @include tablets {
+    display: block;
+    float: none;
+    position: fixed;
+    width:80%;
+    left:-80%;
+    top:0;
+    bottom:0;
+    background-color: $green_light;
+    color: $white;
+   // padding-right: 15px;
+    &:hover {
+      left :0;
+    }
+
+  }
+
+
 }
-
-
-
 .blog-content__right {
-  width: 700px;
-  margin: 0 100px;
+  width: 75%;
   float: left;
+  padding-left: 35px;
+
+  @include tablets
+  {
+    width:100%;
+
+
+
+  }
+
+  @include phone{
+      width:100%;
+
+    }
+
+
 }
+
 .blog-content__triangle {
   position: absolute;
   height: 100px;

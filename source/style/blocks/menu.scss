@@ -27,13 +27,12 @@
 }
 
 .menu_green {
-  border-bottom-left-radius: 3px;
-  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
   .menu__item {
-    //width: 100%;
+
     text-align: center;
     border-right: solid 1px $white;
-   // width: calc(100%/$item_numbers)
     margin: 0px;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;

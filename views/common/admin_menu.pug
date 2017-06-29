@@ -1,0 +1,6 @@
+.admin-menu
+    ul.admin-menu__container
+        each item in menu_items
+            li.admin-menu__row
+                a(href=`${item.href}` class='admin-menu__link')
+                    span.menu__subtitle= item.title

@@ -24,7 +24,9 @@ html {
 	}
 
 }
-
+* {
+	box-sizing: border-box;
+}
 
 body {
 	height: 100%;
@@ -36,39 +38,39 @@ body {
 
 .page-content {
 	display: flex;
-	//min-height: 100vh;
 	flex-direction: column;
-	width: 100%;
+	min-height: 100vh;
 	text-align: center;
-	min-width: 100%;
-	min-height: 100%;
-	//max-width: 1200px;
-	//margin: 0 auto;
+	//height: 100%;
+
 }
 .wrapper {
-	flex: 1;
-	font-family: "Roboto regular";
-	color: $main-font-color;
-	max-width: 1200px;
-	width: 100%;
-
-	@include laptop {
-		width:1200px;
-
-	}
-	@include tablets {
-		width: 100%;
-
-	}
-	@include phone {
-		width:95%;
-
-	}
-	//margin: 0 auto;
-	min-height: 100%;
 	position: relative;
 	overflow: hidden;
 	margin: 0 auto;
+	flex: 1;
+	font-family: "Roboto regular";
+	color: $main-font-color;
+	width: 100%;
+	min-height: 100%;
+
+
+	/*
+        @include laptop {
+            //width:1200px;
+            width: 100%;
+
+        }
+        @include tablets {
+            width: 100%;
+
+        }
+        @include phone {
+            width:95%;
+
+        }
+        */
+
 }
 /*
 .wrapper:after {

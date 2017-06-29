@@ -6,6 +6,9 @@
   overflow: hidden;
   position: relative;
 }
+.blog_hero {
+  height: 400px;
+}
 
 .hero__title {
   @include centered(y);
@@ -30,4 +33,14 @@
 
 .hero__text {
   font-size: 16px;
+}
+
+.hero_welcome {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.hero_bg_welcome {
+  height: 100%;
+
 }

@@ -1,22 +1,38 @@
-//block variables
+block variables
 - var menu_type = 'auth__menu menu_green'
-- var menu_items = [ {title: 'На главную', href: 'index.html' },{title:'Войти', href: 'auth.html' }]
+- var menu_items = [ {title: 'На главную', href: 'index.html' },{title:'Войти', href: '#', id: 'auth_login' }]
 
 .auth
-    .subtitle.auth__title Авторизуйтесь
-    .auth__input
-        .login_pic
-        input.login_input(placeholder="Логин")
-    .auth__input
-        .password_pic
-        input.password__input(placeholder="Пароль")
-    .auth__capcha
-        input(type="checkbox" id="isPerson").checkbox-input
-        span Я человек
-        .text_bold Вы точно не робот?
-        input(type="radio" name="robot")
-        |Да
-        input(type="radio" name="robot")
-        |Не уверен
-        include ../common/menu
+    form.form#login(action='auth' method="POST")
+        .subtitle.auth__title Авторизуйтесь
+        .status
+        .auth__input
+           span.auth__input-pic
+               i(class="fa fa-user" aria-hidden="true")
+           input.login_input(name="login" placeholder="Логин")
+        .auth__input
+            span.auth__input-pic
+                i(class="fa fa-key fa-fw" aria-hidden="true")
+            input.password__input(name="password" placeholder="Пароль")
+        .auth__capcha
+            label(for='isPerson')
+                input(type="checkbox" id="isPerson" class = "auth__checkbox")
+                span(class="auth__isPerson-span")
+                span Я человек
+
+        .robot-wrapper
+            .text_bold Вы точно не робот?
+            label(for = 'robot_yes')
+                input(id = 'robot_yes' name="robot" type="radio").auth__radio
+                span.auth__radio-span
+                span Да
+            label(for = 'robot_no')
+                input(id= 'robot_no' name="robot" type="radio").auth__radio
+                span.auth__radio-span
+                span Не уверен
+
+        .auth__btns
+            //input(name="" type="submit" value="Отправить").form__btn-send
+            //input(name="" type="reset" value="Очистить").form__btn-reset
+            include ../common/menu
 

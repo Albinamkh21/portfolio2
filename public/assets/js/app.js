@@ -1,19 +1,18 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict';
 
-(function () {
-    'use strict';
+var _prepareSend = require('./prepareSend');
 
-    setTimeout(function () {
-        document.querySelector('.greating_picture').classList.add('m--show');
-    }, 1000);
-})();
+var _prepareSend2 = _interopRequireDefault(_prepareSend);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 $(document).ready(function () {
 
     if ($('.preloader').length) {
         preloader.init();
     }
+
     slider.init();
     if ($('.fullscreen-menu').length) {
         fullscreenMenu.init();
@@ -21,7 +20,27 @@ $(document).ready(function () {
     if ($('#authBtn').length) {
         flipper.init();
     }
+    if ($('#login').length) {
+        console.log('login');
+        $('#auth_login').on('click', prepareSendLogin);
+    }
 });
+
+function prepareSendLogin(e) {
+    e.preventDefault();
+    console.log('prepareSendLogin');
+    var formLogin = document.querySelector('#login');
+    var data = {
+        login: formLogin.login.value,
+        password: formLogin.password.value
+    };
+
+    (0, _prepareSend2.default)('/auth', formLogin, data, function (data) {
+        if (data === 'Авторизация успешна!') {
+            location.href = '/admin';
+        }
+    });
+}
 
 /*slider*/
 var slider = function () {
@@ -37,7 +56,15 @@ var slider = function () {
             displayActiveItem = displayList.filter('.active'),
             descList = $('.slider-description__item', '.slider-description__list'),
             descActiveItem = descList.filter('.active'),
-            downBtnIndex = downActiveItem.index(),
+
+
+        /*   upActiveItem = upList.eq(1).addClass('active'),
+           displayActiveItem = displayList.eq(1).addClass('active'),
+           descActiveItem = descList.eq(1).addClass('active'),
+           downActiveItem = downList.eq(1).addClass('active'),
+        */
+
+        downBtnIndex = downActiveItem.index(),
             upBtnIndex = upActiveItem.index(),
             displayIndex = displayActiveItem.index(),
             directionCounter = direction == 'down' ? -1 : +1;
@@ -263,6 +290,55 @@ var flipper = function () {
         }
     };
 }();
+
+},{"./prepareSend":2}],2:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = prepareSend;
+
+var _sendAjax = require('./sendAjax');
+
+var _sendAjax2 = _interopRequireDefault(_sendAjax);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function prepareSend(url, form, data, cb) {
+  var resultContainer = form.querySelector('.status');
+  resultContainer.innerHTML = 'Sending...';
+  (0, _sendAjax2.default)(url, data, function (data) {
+    form.reset();
+    resultContainer.innerHTML = data;
+    if (cb) {
+      cb(data);
+    }
+  });
+}
+
+},{"./sendAjax":3}],3:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+exports.default = function (url, data, cb) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', url, true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.onload = function (e) {
+    var result = void 0;
+    try {
+      result = JSON.parse(xhr.responseText);
+    } catch (e) {
+      cb('Извините в данных ошибка');
+    }
+    cb(result.status);
+  };
+  xhr.send(JSON.stringify(data));
+};
 
 },{}]},{},[1])
 

@@ -22,81 +22,44 @@ block content
         .slider__description
             .slider__description-info
                 ul(class = "slider-description__list")
-                    li(class = "slider-description__item active")
-                        .slider__description-title
-                            .subtitle Бейсбол онлайн
-                        .slider__description-skills
-                            | HTML, css, PHP
-                        .slider__description-btn-wrapper
-                            a(href="#").slider__description__btn
-                                i(aria-hidden="true").fa.fa-link
-                                .slider__description__btn-text Посмотреть сайт
-                    li(class = "slider-description__item ")
-                        .slider__description-title
-                            .subtitle Сайт школы онлайн <br> образования
-                        .slider__description-skills
-                            | HTML, css, javascript
-                        .slider__description-btn-wrapper
-                            a(href="#").slider__description__btn
-                                i(aria-hidden="true").fa.fa-link
-                                .slider__description__btn-text Посмотреть сайт
-                    li(class = "slider-description__item ")
-                        .slider__description-title
-                            .subtitle Лучшие бассейны
-                        .slider__description-skills
-                            | HTML, css, PHP
-                        .slider__description-btn-wrapper
-                            a(href="#").slider__description__btn
-                                i(aria-hidden="true").fa.fa-link
-                                .slider__description__btn-text Посмотреть сайт
-                    li(class = "slider-description__item ")
-                        .slider__description-title
-                            .subtitle Йога студия
-                        .slider__description-skills
-                            | HTML, css, javascript, PHP
-                        .slider__description-btn-wrapper
-                            a(href="#").slider__description__btn
-                                i(aria-hidden="true").fa.fa-link
-                                .slider__description__btn-text Посмотреть сайт
+                    each work, key in works
+                        - var active= key>0 ? "": "active"
+                        li(class = "slider-description__item "+active)
+                            .slider__description-title
+                                .subtitle= work.name
+                            .slider__description-skills= work.technology
+                            .slider__description-btn-wrapper
+                                a(href="#").slider__description__btn
+                                    i(aria-hidden="true").fa.fa-link
+                                    .slider__description__btn-text Посмотреть сайт
+
+
         .slider__display
-
-                img( src = "assets/img/slider/1.jpeg").slider__display-pic
-                .slider__display-block
-                    ul(class="slider__list")
-                        li(class="slider__item active")
-                            img( src = "assets/img/slider/1.jpeg")
-                        li(class="slider__item")
-                            img( src = "assets/img/slider/2.jpeg")
-                        li(class="slider__item")
-                            img( src = "assets/img/slider/3.jpeg")
-                        li(class="slider__item ")
-                            img( src = "assets/img/slider/4.jpeg")
-
+            img( src =`${works[0].img_url}`).slider__display-pic
+            .slider__display-block
+                ul(class="slider__list")
+                    each work,key in works
+                        - var active= key>0 ? "": "active"
+                        li(class=`slider__item ${active}`)
+                            img( src = `${work.img_url}`)
 
         .slider__btns
             .slider__btns__down
                 ul(class="slider__list")
-                    li(class="slider__item ")
-                        img( src = "assets/img/slider/1.jpeg").slider__btns__photo
-                    li(class="slider__item")
-                        img( src = "assets/img/slider/2.jpeg").slider__btns__photo
-                    li(class="slider__item")
-                        img( src = "assets/img/slider/3.jpeg").slider__btns__photo
-                    li(class="slider__item active")
-                        img( src = "assets/img/slider/4.jpeg").slider__btns__photo
+                    each work, key in works
+                        - var active= key == works.length -1 ? "active": ""
+                        li(class="slider__item "+active)
+                            img( src = `${work.img_url}`).slider__btns__photo
+
                 a(href="" id="sliderDownArrow" ).slider__btns_link.slider__btns_link_color_lighten
                     img(src="assets/img/icons/svg/portf_arrow_down.svg").slider__down-arrow-icon
 
             .slider__btns__up
                 ul(class="slider__list")
-                    li(class="slider__item ")
-                        img( src = "assets/img/slider/1.jpeg").slider__btns__photo
-                    li(class="slider__item active")
-                        img( src = "assets/img/slider/2.jpeg").slider__btns__photo
-                    li(class="slider__item")
-                        img( src = "assets/img/slider/3.jpeg").slider__btns__photo
-                    li(class="slider__item")
-                        img( src = "assets/img/slider/4.jpeg").slider__btns__photo
+                    each work, key in works
+                        - var active= key==1 ? "active": ""
+                        li(class="slider__item "+active)
+                            img( src =`${work.img_url}`).slider__btns__photo
                 a(href="" id="sliderUpArrow").slider__btns_link
                     img(src="assets/img/icons/svg/portf_arrow_up.svg").slider__down-arrow-icon
 

@@ -1,26 +1,45 @@
-import fileUpload from './upload';
+import fileUpload from './admin/upload';
+import prepareSend from './prepareSend';
 
-const formUpload = document.querySelector('#upload');
+const formWork = document.querySelector('#work');
+const formBlog = document.querySelector('#blog');
 
-formUpload.addEventListener('submit', prepareSendFile);
+var editor = new nicEditor({fullPanel : true}).panelInstance('blogArlicle');
 
-function prepareSendFile(e) {
+if(formWork)
+    formWork.addEventListener('submit', prepareSendWorkData);
+if(formBlog)
+    formBlog.addEventListener('submit', prepareSendPost);
+
+function prepareSendWorkData(e) {
   e.preventDefault();
-  let resultContainer = formUpload.querySelector('.status');
+  let resultContainer = formWork.querySelector('.status');
   let formData = new FormData();
-  let file = document
-    .querySelector('#file-select')
-    .files[0];
-  let name = document
-    .querySelector('#file-desc')
-    .value;
+  let file = document.querySelector('#work-img').files[0];
+  let name = document.querySelector('#work-name').value;
+  let technology = document.querySelector('#work-technology').value;
 
-  formData.append('photo', file, file.name);
+  formData.append('img', file, file.name);
   formData.append('name', name);
+  formData.append('technology', technology);
 
   resultContainer.innerHTML = 'Uploading...';
-  fileUpload('/admin/upload', formData, function (data) {
+  fileUpload('/admin/addwork', formData, function (data) {
     resultContainer.innerHTML = data;
-    formUpload.reset();
+      formWork.reset();
   });
 }
+
+function prepareSendPost(e) {
+    e.preventDefault();
+
+    var text  = nicEditors.findEditor('blogArlicle').getContent();
+    let data = {
+        title: formBlog.title.value,
+        date: formBlog.date.value,
+        text: text
+    };
+    console.log(text);
+    prepareSend('/admin/addpost', formBlog, data);
+}
+//var blogArlicle =  document.querySelector('#blogArlicle');

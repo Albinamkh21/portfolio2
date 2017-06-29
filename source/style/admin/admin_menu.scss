@@ -1,0 +1,36 @@
+.admin-menu {
+  background-color: #EC7063;
+}
+.admin-menu__container {
+  padding: 0;
+  text-align: center;
+  width: 80%;
+  margin: 0 auto;
+  min-width: 850px;
+}
+
+.admin-menu__row {
+  display: inline-block;
+  list-style-type: none;
+  transition: all 1s;
+  background-color: #EC7063;
+  border-right: 1px solid #ccc;
+  &:hover {
+    background-color: #943126;
+  }
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.admin-menu__link {
+  display: block;
+  text-decoration: none;
+  font: 25px 'Arial', sans-serif;
+  color: #353838;
+  transition: all 1s;
+  padding: 5px 15px;
+  &:hover {
+    color: #fff;
+  }
+}

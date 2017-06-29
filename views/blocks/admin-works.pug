@@ -1,0 +1,17 @@
+.admin-works-content
+.row
+    .col
+        .form-container
+            form.form#work(action='/addwork' method="POST" enctype="multipart/form-data")
+                .form__subtitle Мои работы
+                .status
+                label.form__input-line
+                    input(name="name" type="text" placeholder="Название проекта").form__input#work-name
+                label.form__input-line
+                    input(name="technology" type="text" placeholder="Технологии").form__input#work-technology
+                label.form__input-line
+                    input(name="img" type="file" required accept="image/*").form__input#work-img
+                .form__btns.form__input-line
+                    input(name="" type="submit" value="Отправить").form__btn-send
+                    input(name="" type="reset" value="Очистить").form__btn-reset
+
